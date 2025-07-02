@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цомпель Олександр - Резюме</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 85vh;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #34495e;
+            margin-bottom: 20px;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="18" fill="white" opacity="0.8"/><path d="M25 75 Q50 60 75 75 L75 90 L25 90 Z" fill="white" opacity="0.8"/></svg>');
+            background-size: cover;
+            border: 3px solid #34495e;
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #bdc3c7;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .contact-info {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 18px;
+            margin-right: 10px;
+            text-align: center;
+            color: #3498db;
+        }
+
+        .skills {
+            width: 100%;
+        }
+
+        .skills h3 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+            font-size: 16px;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #3498db;
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        .main-content {
+            padding: 30px;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 16px;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-top: 3px solid #e74c3c;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            font-size: 12px;
+            color: #3498db;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+            
+            .sidebar {
+                padding: 20px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-photo"></div>
+            <div class="name">Цомпель Олександр</div>
+            <div class="title">Shopify Developer</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sashatsompel@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>+380 66 027 41 03</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Київ, Україна</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>linkedin.com/in/sascyt</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github-alt"></i>
+                    <span>github.com/SASCYT9</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>@sascyt</span>
+                </div>
+            </div>
+
+            <div class="skills">
+                <h3>Навички</h3>
+                <div class="skill-item">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Shopify/Liquid</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">C++</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Arduino</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>Про себе</h2>
+                <p class="about-text">
+                    Спеціалізуюся на повному циклі розробки Shopify магазинів — від створення 
+                    унікальних тем до заповнення товарами та налаштування каталогу. За останні 
+                    1.5 роки створив десятки e-commerce проектів, працюючи з Liquid, JavaScript 
+                    та сучасними веб-технологіями. Також маю досвід викладання програмування. 
+                    Завжди орієнтований на результат та створення магазинів, які продають.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Досвід роботи</h2>
+                <div class="experience-item">
+                    <div class="job-title">Shopify Developer & Product Manager</div>
+                    <div class="company">Фріланс / Remote Work</div>
+                    <div class="date">Січень 2024 - теперішній час (6+ місяців)</div>
+                    <div class="description">
+                        Повний цикл розробки Shopify магазинів: створення унікальних тем та 
+                        кастомізація існуючих, розробка функціоналу на Liquid, JavaScript, HTML/CSS, 
+                        заповнення товарів, налаштування каталогу та категорій, оптимізація 
+                        конверсії та SEO налаштування, інтеграція платіжних систем. 
+                        Реалізовані проекти: eventuri.shop, fiexhaust.shop та інші.
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="job-title">Викладач програмування</div>
+                    <div class="company">Приватні уроки та курси</div>
+                    <div class="date">Січень 2024 - теперішній час (6+ місяців)</div>
+                    <div class="description">
+                        Індивідуальні уроки з HTML/CSS, JavaScript, Python, C++, навчання основам 
+                        Arduino та IoT проектів, розробка навчальних програм та практичних завдань, 
+                        підготовка студентів до співбесід та проектів, супровід від початкового 
+                        до середнього рівня.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Освіта</h2>
+                <div class="education-item">
+                    <div class="job-title">Магістр (у процесі навчання)</div>
+                    <div class="company">КПІ ім. Ігоря Сікорського, ПБФ</div>
+                    <div class="date">2024 - 2025</div>
+                    <div class="description">
+                        Поглиблене вивчення сучасних технологій програмування, машинного навчання, 
+                        архітектури програмних систем та методологій розробки.
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="job-title">Бакалавр</div>
+                    <div class="company">КПІ ім. Ігоря Сікорського, ПБФ</div>
+                    <div class="date">2020 - 2024</div>
+                    <div class="description">
+                        Фундаментальні знання з програмування, алгоритмів, структур даних, 
+                        веб-технологій та принципів розробки програмного забезпечення.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Проекти</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Eventuri Performance Shop</div>
+                        <div class="project-tech">Shopify • Liquid • JavaScript • CSS</div>
+                        <div class="description">
+                            Повнофункціональний магазин автозапчастин з кастомною темою та 
+                            оптимізованою конверсією. Виконав повний цикл: від дизайну до 
+                            заповнення каталогу з 500+ товарами та налаштування SEO.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Fi Exhaust Official Store</div>
+                        <div class="project-tech">Shopify • Liquid • JavaScript • CSS</div>
+                        <div class="description">
+                            Інтернет-магазин випускних систем з унікальним дизайном, 
+                            інтегрованими платіжними системами та повністю налаштованим каталогом. 
+                            Заповнення 300+ товарів з детальними описами.
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Навчальні курси програмування</div>
+                        <div class="project-tech">Python • C++ • JavaScript • Arduino</div>
+                        <div class="description">
+                            Розробка авторських курсів та практичних завдань для студентів. 
+                            Створення інтерактивних прикладів та проектів для ефективного 
+                            навчання програмування з нуля.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
